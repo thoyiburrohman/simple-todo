@@ -3,9 +3,9 @@
 use App\Models\Project;
 use App\Models\Task;
 use Illuminate\Support\Facades\Route;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
-// Route::get('/', function () {
-//     $p = Project::first();
-//     dd($p->task->count());
-//     return view('welcome');
-// });
+Route::get('/bot', function () {
+
+  return Telegram::getMe();;
+});
