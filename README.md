@@ -1,61 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Simple & Unique Laravel Filament To-Do App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Laravel v11.x](https://img.shields.io/badge/Laravel-v12.x-FF2D20?style=flat-square&logo=laravel)](https://laravel.com/)
+[![Filament v3.x](https://img.shields.io/badge/Filament-v3.x-228B22?style=flat-square&logo=filament)](https://filamentphp.com/)
 
-## About Laravel
+Aplikasi To-Do List sederhana namun unik yang dibangun dengan Laravel dan Filament Admin Panel. Aplikasi ini dirancang untuk membantu pengguna melacak tugas-tugas mereka, memisahkannya berdasarkan kategori proyek, dan memantau progres dengan cepat. Sangat cocok untuk individu yang ingin mengelola proyek koding, non-koding, atau tugas personal secara efektif.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* **Manajemen Tugas:** Tambah, edit, dan tandai tugas sebagai selesai atau belum selesai.
+* **Kategori Kustom:** Kelompokkan tugas ke dalam kategori yang dapat ditentukan sendiri (misalnya, "Proyek Koding", "Personal", "Pekerjaan Rumah").
+* **Pelacakan Progres Kategori:** Lihat status progres (berapa banyak tugas yang belum selesai dari total) untuk setiap kategori langsung di daftar kategori. Angka tugas yang belum selesai diberi highlight visual.
+* **UI Intuitif:** Antarmuka admin yang bersih dan mudah digunakan berkat Laravel Filament.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Persyaratan Sistem
 
-## Learning Laravel
+Pastikan sistem Anda memenuhi persyaratan Laravel dan Filament:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* PHP >= 8.2
+* Composer
+* Node.js & npm (untuk aset frontend Filament)
+* Database (MySQL)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Instalasi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ikuti langkah-langkah di bawah ini untuk menginstal dan menjalankan aplikasi secara lokal:
 
-## Laravel Sponsors
+1.  **Clone Repositori:**
+    ```bash
+    git clone [https://github.com/USERNAME_ANDA/NAMA_REPOSITORI_ANDA.git](https://github.com/USERNAME_ANDA/NAMA_REPOSITORI_ANDA.git)
+    cd NAMA_REPOSITORI_ANDA
+    ```
+    *(Ganti `USERNAME_ANDA` dan `NAMA_REPOSITORI_ANDA` dengan detail GitHub-mu)*
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2.  **Instal Dependensi Composer:**
+    ```bash
+    composer install
+    ```
 
-### Premium Partners
+3.  **Salin File Environment:**
+    ```bash
+    cp .env.example .env
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+4.  **Buat Kunci Aplikasi:**
+    ```bash
+    php artisan key:generate
+    ```
 
-## Contributing
+5.  **Konfigurasi Database:**
+    Buka file `.env` dan konfigurasikan detail koneksi database Anda (DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```dotenv
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=nama_database_anda
+    DB_USERNAME=username_database_anda
+    DB_PASSWORD=password_database_anda
+    ```
 
-## Code of Conduct
+6.  **Jalankan Migrasi Database:**
+    ```bash
+    php artisan migrate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7.  **Instal Node.js Dependencies & Build Assets:**
+    ```bash
+    npm install
+    npm run build
+    ```
 
-## Security Vulnerabilities
+8.  **Buat User Admin Filament:**
+    ```bash
+    php artisan make:filament-user
+    ```
+    Ikuti prompt untuk membuat user admin pertama Anda.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+9.  **Jalankan Server Pengembangan:**
+    ```bash
+    php artisan serve
+    ```
 
-## License
+Aplikasi akan tersedia di `http://127.0.0.1:8000`. Panel admin Filament dapat diakses melalui `http://127.0.0.1:8000/admin`.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Penggunaan
+
+1.  **Login** ke panel admin Filament menggunakan kredensial user admin yang Anda buat.
+2.  Navigasi ke **"Kategori Proyek"** di sidebar. Buat kategori-kategori Anda (misalnya, "Proyek Koding", "Personal", "Ide"). Anda dapat memberikan warna pada setiap kategori.
+3.  Navigasi ke **"Daftar Tugas"** di sidebar.
+4.  Klik tombol **"Buat Tugas Baru"** untuk menambahkan tugas baru. Pilih kategori yang sesuai, berikan judul, dan deskripsi (opsional).
+5.  Pada daftar tugas, Anda dapat **mengedit** tugas, atau **menandainya sebagai selesai** menggunakan kolom "Selesai?".
+6.  Pada daftar kategori, Anda dapat melihat **"Status Tugas"** yang menunjukkan berapa banyak tugas yang belum selesai dari total di setiap kategori, dengan highlight visual.
+
+## Kontribusi
+
+Kontribusi dipersilakan! Jika Anda menemukan bug atau memiliki saran fitur, silakan buka *issue* atau kirim *pull request*.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah Lisensi MIT.
+
+---
